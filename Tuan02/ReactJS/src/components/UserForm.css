@@ -1,0 +1,62 @@
+/* UserForm.css */
+
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 500px; /* Giới hạn chiều rộng cho đẹp */
+  margin: 0 auto;   /* Căn giữa màn hình */
+}
+
+.title {
+  color: #333;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-input {
+  padding: 10px;
+  width: 100%;       /* Chiếm hết chiều rộng cha */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Đảm bảo padding không làm vỡ layout */
+}
+
+/* Hiệu ứng khi click vào ô input */
+.form-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.divider {
+  margin: 25px 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+.result-box {
+  background-color: #f8f9fa; /* Màu xám nhẹ */
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.result-item {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.empty-text {
+  color: #999;
+  font-style: italic;
+  font-size: 14px;
+}

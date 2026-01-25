@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaiTap02</title>
+</head>
+<body>
+    <script>
+        const calcAverageHumanAge = function (ages) {
+            const humanAges = ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4));
+            console.log("1. Tuổi người:", humanAges);
+
+            const adults = humanAges.filter(age => age >= 18);
+            console.log("2. Chó trưởng thành:", adults);
+
+            const average = adults.reduce((acc, age) => acc + age, 0) / adults.length;
+            return average;
+        };
+
+        const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+        console.log("Trung bình Data 1:", avg1); 
+
+        const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
+        console.log("Trung bình Data 2:", avg2);
+    </script>
+</body>
+</html>

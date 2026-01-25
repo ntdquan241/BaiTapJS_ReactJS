@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaiTap01</title>
+</head>
+<body>
+    <script>
+        const Car = function (make, speed) {
+            this.make = make;
+            this.speed = speed;
+        };
+
+        Car.prototype.accelerate = function () {
+            this.speed += 10; 
+            console.log(`${this.make} is going at ${this.speed} km/h`);
+        };
+
+        Car.prototype.brake = function () {
+            this.speed -= 5; 
+            console.log(`${this.make} is going at ${this.speed} km/h`);
+        };
+
+        const bmw = new Car('BMW', 120);
+        const mercedes = new Car('Mercedes', 95);
+
+        console.log("--- BMW ---");
+        bmw.accelerate(); // 130
+        bmw.accelerate(); // 140
+        bmw.brake();      // 135
+        bmw.accelerate(); // 145
+
+        console.log("--- Mercedes ---");
+        mercedes.brake(); // 90
+        mercedes.brake(); // 85
+        mercedes.accelerate();
+    </script>
+</body>
+</html>

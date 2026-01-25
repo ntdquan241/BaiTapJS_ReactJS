@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaiTap01</title>
+</head>
+<body>
+    <script>
+        const game = {
+            team1: 'Bayern Munich',
+            team2: 'Borrussia Dortmund',
+            players: [
+                [
+                    'Neuer', 'Pavard', 'Martinez', 'Alaba', 'Davies',
+                    'Kimmich', 'Goretzka', 'Coman', 'Muller', 'Gnarby', 'Lewandowski',
+                ],
+                [
+                    'Burki', 'Schulz', 'Hummels', 'Akanji', 'Hakimi',
+                    'Weigl', 'Witsel', 'Hazard', 'Brandt', 'Sancho', 'Gotze',
+                ],
+            ],
+            score: '4:0',
+            scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+            date: 'Nov 9th, 2037',
+            odds: {
+                team1: 1.33,
+                x: 3.25,
+                team2: 6.5,
+            },
+        };
+
+        const [players1, players2] = game.players;
+        console.log("1. Cầu thủ 2 đội:", players1, players2);
+        
+        const [gk, ...fieldPlayers] = players1;
+        console.log("2. Thủ môn:", gk);
+        console.log("   Cầu thủ còn lại:", fieldPlayers);
+
+        const allPlayers = [...players1, ...players2];
+        console.log("3. Tất cả cầu thủ:", allPlayers);
+
+        const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+        console.log("4. Đội hình Bayern (có thay người):", players1Final);
+
+        const { odds: { team1, x: draw, team2 } } = game;
+        console.log(`5. Tỉ lệ cược: Team1 (${team1}), Hòa (${draw}), Team2 (${team2})`);
+
+        const printGoals = function (...players) {
+            console.log(`6. (Trận đấu có ${players.length} bàn thắng)`);
+            
+            for (let i = 0; i < players.length; i++) {
+                console.log(players[i]);
+            }
+        };
+
+        printGoals(...game.scored);
+
+        team1 < team2 && console.log('7. Team 1 có khả năng thắng');
+        team1 > team2 && console.log('7. Team 2 có khả năng thắng');
+    </script>
+</body>
+</html>
