@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaiTap02</title>
+</head>
+<body>
+    <script>
+        class CarCl {
+            constructor(make, speed) {
+                this.make = make;
+                this.speed = speed;
+        }
+
+        accelerate() {
+            this.speed += 10;
+            console.log(`${this.make} is going at ${this.speed} km/h`);
+        }
+
+        brake() {
+            this.speed -= 5;
+            console.log(`${this.make} is going at ${this.speed} km/h`);
+        }
+
+        get speedUS() {
+            return this.speed / 1.6;
+        }
+
+        set speedUS(speed) {
+            this.speed = speed * 1.6;
+        }
+    }
+
+    const ford = new CarCl('Ford', 120);
+
+    console.log(ford.speedUS); // 75 (mi/h)
+    ford.accelerate();         // Ford is going at 130 km/h
+    ford.accelerate();         // Ford is going at 140 km/h
+    ford.brake();              // Ford is going at 135 km/h
+
+    ford.speedUS = 50;         
+    console.log(ford);         // Speed is now 80 km/h (50 * 1.6)
+    </script>
+</body>
+</html>
